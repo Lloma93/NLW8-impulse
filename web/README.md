@@ -54,8 +54,63 @@ exportar x importar com ou sem {}
 // export App -> import { App } : principal benefício, não errar o nome
 
 
-------------
+para formulários instalar o tailwindcss-forms um plugin para facilitar a estilização de formulários 
+https://github.com/tailwindlabs/tailwindcss-forms
+$ npm install -D @tailwindcss/forms
 
+// add no arquivo `tailwind.config.js`  o plugin
+
+```js
+module.exports = {
+  content: ["./src/**/*.tsx"],
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          500: '#8257E5'
+        }
+      }
+    },
+  },
+  plugins: [
+    require('@tailwindcss/forms')
+  ],
+}
+```
+
+o scrollbar nativo pode estar estranho, principalmente em navegadores do mac
+para lidar com isso temos um pacote no npm
+https://www.npmjs.com/package/tailwind-scrollbar
+
+$npm install --save-dev tailwind-scrollbar
+```js
+module.exports = {
+  content: ["./src/**/*.tsx"],
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          500: '#8257E5'
+        }
+      }
+    },
+  },
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('tailwind-scrollbar'),
+  ],
+}
+```
+
+------------
+## screenshots
+
+lidar com o screenshot de telas
+https://html2canvas.hertzen.com/
+$ npm install --save html2canvas
+
+
+-------------
 ## ícones
 
 phosphor-icons
