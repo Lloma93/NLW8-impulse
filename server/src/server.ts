@@ -1,10 +1,27 @@
 import express from 'express'
-import { prisma } from './prisma';
+import { routes } from './routes';
 
 const app = express();
+// usar o aruivo routes 
+app.use(express.json());
+app.use(routes)
 
 //não esquecer antes das rotas, sem ele não interpreta o JSON 
-app.use(express.json());
+
+// const transport = nodemailer.createTransport({
+//     host: "smtp.mailtrap.io",
+//     port: 2525,
+//     auth: {
+//       user: "82dd91de36d5f7",
+//       pass: "4a637e80c753e3"
+//     }
+//   });
+
+app.listen(5000, () => {
+    console.log('HTTP server running!');
+})
+
+
 
 // // app.get('/users', (req, res) => {
 // // // app.get('/users', (request, response) => {
@@ -43,20 +60,30 @@ app.use(express.json());
 
 // transformando a função para aguardar a resposta
 // esperar a operação do banco de dados ser finalizada para devolver uma resposta 
-app.post('/feedbacks', async (req, res) => {
-    const { type, comment, screenshot } = req.body;
-    const feedback = await prisma.feedback.create({
-        data: {
-            type,
-            comment,
-            screenshot
-        }
-})
-     return res.status(201).json({data: feedback});
-})
 
+// mudou de arquivo
+// app.post('/feedbacks', async (req, res) => {
+//     const { type, comment, screenshot } = req.body;
+//     const feedback = await prisma.feedback.create({
+//         data: {
+//             type,
+//             comment,
+//             screenshot
+//         }
+// })
 
-app.listen(5000, () => {
-    console.log('HTTP server running!');
-})
+// await transport.sendMail({
+//     from: 'Equipe Feedback <oi@feedback.com>',
+//     to: 'Palloma Dev <palloma.adolfi@gmail.com>',
+//     subject: 'Novo feedback',
+//     html: [
+//          `<div style="font-family: sans-serif; font-size: 16px; color: #111;">`,
+//          `<p>Tipo do feedback: ${type} </p>`,
+//          `<p>Comentário: ${comment} </p>`,
+//          `</div>`
+//     ].join('\n')
+// })
+//      return res.status(201).json({data: feedback});
+// })
+
 

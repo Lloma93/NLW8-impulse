@@ -182,4 +182,56 @@ https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status/201
 #envio de e-mail
 instalar uma biblioteca para o envio de e-mail
 $npm i nodemailer
-1:11:25
+
+p/ evitar erro de tipagem
+npm i @types/nodemailer -D
+
+// smtp
+serviço de envio de e-mail 
+(smtp google -> limite 100emails por dia)
+(smtp mailgun)
+sparkpost
+mailchimp
+
+--> mailtrap.io 
+vamos usar esse
+criar conta (#######.avanade@gmail)
+abrir inboxes
+NLW-8
+(abrir)
+settings -> escolher a integração com o nodemailer
+
+```
+var transport = nodemailer.createTransport({
+  host: "smtp.mailtrap.io",
+  port: 2525,
+  auth: {
+    user: "82dd91de36d5f7",
+    pass: "4a637e80c753e3"
+  }
+});
+```
+
+princípios do SOLID
+# SOLID
+1 - single responsability 
+2 - open-close principle
+3 - liskov substituin principle
+4 - interface segragation principle
+5 - dependency inversion principle
+-----------------
+1. { princípio de uma responsabilidade única} : cada classe/função tem uma responsabilidade única; "a função faz issoo e isso" evite o EEE
+
+2. as classes da aplicação devem ser abertas para extensão e fechadas para modificação;
+
+3.
+nós devemos poder substituir uma classe pai por uma herança dela e tudo continuar funcionando;
+
+4. (tipagem ajuda) Impressora => imprimir, scannear, digitalizar
+                        cada classe para uma interface 
+
+5.inverter as dependencias das classes => feedback x envio de e-mail 
+             "diferença de dependência" e "uso" de outra classe / função 
+             não validamos a responsabilidade de outros serviços 
+
+
