@@ -23,6 +23,20 @@ export class SubmitFeedbackService {
         // executa a submissao de um novo feedback
     const { type, comment, screenshot } = request;
 
+    // regra campo existe
+    if (!type) {
+        throw new Error('Type is required')
+    }
+    
+    if (!comment) {
+        throw new Error('Type is required')
+    }
+
+    // realiza a validação do tipo do screenshot
+    if (screenshot && !screenshot.startsWith('data:image/png;base64')){
+        throw new Error('Invalid screenshot format.')
+    }
+
     await this.feedbacksRepository.create({
             type,
             comment,

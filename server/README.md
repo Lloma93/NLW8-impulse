@@ -234,4 +234,75 @@ nós devemos poder substituir uma classe pai por uma herança dela e tudo contin
              "diferença de dependência" e "uso" de outra classe / função 
              não validamos a responsabilidade de outros serviços 
 
+------
 
+criar pastas (1)
+####outras pessoas entendam e consigam dar manutenção
+repositories ou databases
+// repositories pattern
+//data mapper pattern
+cada item deve referir a uma entidade
+
+----
+criar a pasta
+use-cases ou services
+
+---
+adapter
+pasta para envio de e-mail e sms
+-----------------------------------
+
+
+# Jest
+iniciando testes com jest
+ferramenta/framework para testes automatizados e unitários
+
+$ npm i jest -D
+$ npx jest --init
+/Would you like to use Jest when running "test" script in "package.json"? / Y
+/Would you like to use Typescript for the configuration file?/ y
+/ Choose the test environment that will be used for testing/ node
+/Do you want Jest to add coverage reports?/ y
+/ Which provider should be used to instrument code for coverage?/ v8
+/ Automatically clear mock calls, instances, contexts and results before every test?/y
+----test config.ts
+
+para usar o jest com typescript também precisqamos usar o ts-node
+$ npm i ts-node -D
+
+// jest interpreta aquivos js
+pacotes 
+ts-jest ------- compiler do typescript 
+--usar o babel 
+------------swc / compiler para JS ou TS mais rápido q o babel!
+$ npm i -D jest @swc/jest
+
+Inside jest.config.js, configure Jest to use SWC:
+
+module.exports = {
+  transform: {
+    "^.+\\.(t|j)sx?$": ["@swc/jest"],
+  },
+};
+
+---------poderia ser
+{
+    "^.+\\.ts?$": ["@swc/jest"],
+  },
+  ------------------
+  arquivo.spec.ts
+
+// tipagem de teste do jest
+  $npm i @types/jest -D
+  (pacote q exporta tipagem junto om o pacote +++)
+
+  // rodar os testes com $ npm run test
+
+  --------------
+   spies = espiões 
+   ----------------------------------
+
+   integrando com o frontend localmente
+   para evitar o erro de cors:
+   $ npm i cors
+   $ npm i @types/cors -D

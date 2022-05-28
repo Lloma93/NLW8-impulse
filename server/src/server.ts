@@ -1,8 +1,10 @@
 import express from 'express'
+import cors from 'cors'
 import { routes } from './routes';
 
 const app = express();
 // usar o aruivo routes 
+app.use(cors()); //aberto para todos
 app.use(express.json());
 app.use(routes)
 
