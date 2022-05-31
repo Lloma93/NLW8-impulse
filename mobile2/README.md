@@ -29,7 +29,9 @@ $ expo install expo-font @expo-google-fonts/inter
 
 loader para carregar as fontes
 expo install expo-app-loading
-
+---------------mudou
+import * as SplashScreen from 'expo-splash-screen';
+https://docs.expo.dev/versions/latest/sdk/splash-screen/
 
 
 lib ícones
@@ -65,3 +67,8 @@ import 'react-native-gesture-handler';
 
 ## expo start --clear 
 limpar o cache 
+
+// gestureHandlerRootHoc -> lida com os movimentos do usuário
+
+yarn cache clean --force
+rm -rf /tmp/metro-* 
