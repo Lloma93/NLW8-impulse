@@ -4,12 +4,15 @@ import { Heart } from 'phosphor-react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 // import { FaBeer } from 'react-icons/fa';
 // import { FaBeer } from "@react-icons/lib/fa/beer";
-import { styles } from './styles';
-import { theme } from '../../theme';
 import BottomSheet from '@gorhom/bottom-sheet';
 import { IconFill, IconOutline } from "@ant-design/icons-react-native";
+import { Options } from '../Options';
+import { Form } from '../Form';
+import { styles } from './styles';
+import { theme } from '../../theme';
+import { feedbackTypes } from '../../utils/feedbackTypes'
 
-
+export type FeedbackType = keyof typeof feedbackTypes ;
 export function Widget() {
 
   const bottomSheetRef = useRef<BottomSheet>(null);
@@ -37,11 +40,13 @@ export function Widget() {
     <BottomSheet 
       ref={bottomSheetRef}
       snapPoints={[1, 280]}
+      backgroundStyle={styles.modal}
+      handleIndicatorStyle={styles.indicator}
       >
-
-
+        <Form 
+          feedbackType='BUG'
+        />
       </BottomSheet> 
-    
     </>
   );
  

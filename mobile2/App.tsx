@@ -6,9 +6,9 @@ import { View } from 'react-native';
 import { theme } from './src/theme';
 import { Widget } from './src/components/Widget';
 // import AppLoading from 'expo-app-loading';
-// import { useFonts, Inter_400Regular, Inter_500Medium } from '@expo-google-fonts/inter';
+ import { useFonts, Inter_400Regular, Inter_500Medium } from '@expo-google-fonts/inter';
 // import { Inter_400Regular, Inter_500Medium } from '@expo-google-fonts/inter';
-import Entypo from '@expo/vector-icons/Entypo';
+// import { Entypo, Inter_400Regular, Inter_500Medium } from '@expo/vector-icons/Inter';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
@@ -24,7 +24,7 @@ export default function App() {
           // Keep the splash screen visible while we fetch resources
           await SplashScreen.preventAutoHideAsync();
           // Pre-load fonts, make any API calls you need to do here
-          await Font.loadAsync(Entypo.font);
+          await Font.loadAsync({ Inter_400Regular, Inter_500Medium });
           // Artificially delay for two seconds to simulate a slow loading
           // experience. Please remove this if you copy and paste the code!
           await new Promise(resolve => setTimeout(resolve, 2000));

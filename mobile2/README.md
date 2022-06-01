@@ -42,7 +42,7 @@ lib lidar com svg
 expo install react-native-svg
 
 
-auxiliar no iphone
+auxiliar no iphone ___ ios
 https://github.com/ptelad/react-native-iphone-x-helper
 npm i react-native-iphone-x-helper --save
 
@@ -72,3 +72,13 @@ limpar o cache
 
 yarn cache clean --force
 rm -rf /tmp/metro-* 
+
+
+#################
+trocar a lib de ícones que tem dado erro pela do expo
+@expo/vector-icons
+
+
+react-icons, material-icons, phosphor-icons, expo-vector-icons..
+tudo 0800..
+###PROBLEMA COM LIBS E JSX""""
