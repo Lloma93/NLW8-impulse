@@ -8,6 +8,8 @@ import BottomSheet from '@gorhom/bottom-sheet';
 import { IconFill, IconOutline } from "@ant-design/icons-react-native";
 import { Options } from '../Options';
 import { Form } from '../Form';
+import { Success } from '../Success';
+
 import { styles } from './styles';
 import { theme } from '../../theme';
 import { feedbackTypes } from '../../utils/feedbackTypes'
@@ -46,6 +48,7 @@ export function Widget() {
         <Form 
           feedbackType='BUG'
         />
+        {/* <Success /> */}
       </BottomSheet> 
     </>
   );
