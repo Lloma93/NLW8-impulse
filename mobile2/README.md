@@ -82,3 +82,10 @@ trocar a lib de ícones que tem dado erro pela do expo
 react-icons, material-icons, phosphor-icons, expo-vector-icons..
 tudo 0800..
 ###PROBLEMA COM LIBS E JSX""""
+
+
+--------------------------------------
+
+instalar lib de screenshot
+$ expo install react-native-view-shot
+:36:14
