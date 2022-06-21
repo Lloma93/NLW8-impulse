@@ -88,4 +88,17 @@ tudo 0800..
 
 instalar lib de screenshot
 $ expo install react-native-view-shot
-:36:14
+-----
+
+Axios
+// lib para as reqs http 
+$npm i axios
+
+baseURL -> usar ipconfig ou ifconfig
+192.168.00.000
+
+----
+lib do expo para lidar com a conversão de arquivo 
+$ expo install expo-file-system
+lib necessária para capturar a imagem salva localmente 
+https://docs.expo.dev/versions/latest/sdk/filesystem/

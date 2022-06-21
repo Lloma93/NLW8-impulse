@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 import { Heart } from 'phosphor-react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
@@ -15,13 +15,26 @@ import { theme } from '../../theme';
 import { feedbackTypes } from '../../utils/feedbackTypes'
 
 export type FeedbackType = keyof typeof feedbackTypes ;
+
 export function Widget() {
 
+  const [feedbackType, setFeedbackType] = useState<FeedbackType | null>(null)
+  const [feedbackSent, setFeedbackSent] = useState(false)
   const bottomSheetRef = useRef<BottomSheet>(null);
+
 
  const handleOpen = () => {
     bottomSheetRef.current?.expand();
   } 
+
+  function handleReestartFeedback() {
+    setFeedbackSent(false)
+    setFeedbackType(null)
+  }
+
+  function handleFeedbackSent() {
+    setFeedbackSent(true)
+  }
   
   return(
     <>
@@ -45,9 +58,26 @@ export function Widget() {
       backgroundStyle={styles.modal}
       handleIndicatorStyle={styles.indicator}
       >
-        <Form 
+        {
+          feedbackSent? 
+          <Success onSendAnotherFeedback={handleReestartFeedback}/> 
+          :
+          <> 
+          {
+            feedbackType ? 
+            <Form 
+            feedbackType={feedbackType}
+            onFeedbackCanceled={handleReestartFeedback}
+            onFeedbackSent={handleFeedbackSent}
+            />
+            :
+            <Options onFeedbackTypeChanged={setFeedbackType}/>
+          }
+          </>
+        }
+        {/* <Form 
           feedbackType='BUG'
-        />
+        /> */}
         {/* <Success /> */}
       </BottomSheet> 
     </>
