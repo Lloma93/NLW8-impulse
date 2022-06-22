@@ -330,3 +330,8 @@ https://railway.app/
 Criar BD postgree // pegar a variável e add ao projeto
 DATABASE_URL -> atrelar a conexão do banco de dados
 
+
+------
+railway: habilitar PR :) 
+
+
