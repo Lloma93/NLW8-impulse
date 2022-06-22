@@ -1,3 +1,4 @@
+import React from "react";
 import { CloseButton } from "../../CloseButton";
 import { feedbackTypes, FeedbackType } from "./../index";
 

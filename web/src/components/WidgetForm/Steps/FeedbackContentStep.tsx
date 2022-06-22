@@ -1,3 +1,4 @@
+import React from "react";
 import { ArrowArcLeft, Camera } from "phosphor-react";
 import { FormEvent, useState } from "react";
 import { FeedbackType, feedbackTypes } from "..";

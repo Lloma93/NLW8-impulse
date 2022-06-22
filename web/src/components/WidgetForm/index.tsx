@@ -1,3 +1,4 @@
+import React from "react";
 import { CloseButton } from "../CloseButton";
 
 import bugImageUrl from "../../assets/bug.svg";
