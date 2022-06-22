@@ -50,6 +50,7 @@ export class SubmitFeedbackService {
                          `<p>Comentário: ${comment} </p>`,
                          `<p>Comentário: ${screenshot} </p>`,
                          ` <img src="${screenshot}" alt="image bug" />`,
+                        //  screenshot ?  ` <img src="${screenshot}" alt="image bug" />` : null
                          `</div>`
                     ].join('\n')
         })

@@ -1,7 +1,9 @@
 import { ArrowArcLeft, Camera } from "phosphor-react";
 import { FormEvent, useState } from "react";
 import { FeedbackType, feedbackTypes } from "..";
+import { api } from "../../../service/api";
 import { CloseButton } from "../../CloseButton";
+import { Loading } from "../../Loading";
 import { ScreenshotButton } from "../ScreenshotButton";
 
 interface FeedbackContentStepProps {
@@ -17,18 +19,27 @@ export function FeedbackContentStep({
 }: FeedbackContentStepProps) {
   const [screenshot, setScreenshot] = useState<string | null>(null);
   const [comment, setComment] = useState<string>('')
+  const [isSendingFeedback, setIsSendingFeedback] = useState(false)
   const feedBackTypeInfo = feedbackTypes[feedbackType];
 
-function handleSubmitFeedback(event: FormEvent) {
+async function handleSubmitFeedback(event: FormEvent) {
   event.preventDefault();
-  console.log({ screenshot, comment})
-
+  setIsSendingFeedback(true)
+  // console.log({ screenshot, comment})
+  await api.post('/feedbacks', {
+    type: feedbackType,
+    comment,
+    screenshot
+  })
+  setIsSendingFeedback(false)
   onFeedbackSent();
 }
 
   return (
     <>
-      {console.log("recebi a img", screenshot)}
+      {/* {console.log("recebi a img", screenshot)} */}
+
+
       <header>
         <button
           type="button"
@@ -48,7 +59,7 @@ function handleSubmitFeedback(event: FormEvent) {
         <CloseButton />
         {/* [ctrl] + [btn ponto] - importar */}
       </header>
-
+      
       <form onSubmit={handleSubmitFeedback} className="my-4 w-full">
         <textarea
           className="min-w-[304px] w-full min-h-[112px] text-sm placeholder-zinc-400 text-zinc-100  border-zinc-600 bg-transparent rounded-md 
@@ -66,7 +77,7 @@ function handleSubmitFeedback(event: FormEvent) {
           />
           <button
             type="submit"
-            disabled={comment.length === 0}
+            disabled={comment.length === 0 || isSendingFeedback}
             className="p-2 bg-brand-500 rounded-md border-transparent flex-1 flex justify-center 
             items-center text-sm hover:bg-brand-300 
             focus:outline-none focus:ring-2 
@@ -74,7 +85,8 @@ function handleSubmitFeedback(event: FormEvent) {
             disabled:opacity-50 disabled:hover:bg-brand-500
             "
           >
-            Enviar feedback
+            {isSendingFeedback? <Loading /> : 'Enviar feedback'}
+            
           </button>
         </footer>
       </form>

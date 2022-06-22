@@ -144,3 +144,10 @@ radix-ui
 utilizar a doc https://headlessui.dev/
 
 #npm install @headlessui/react
+
+------------------------
+
+integrando com o back end
+$npm i axios
+
+#criar service

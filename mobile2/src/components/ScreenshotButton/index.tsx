@@ -29,7 +29,7 @@ export function ScreenshotButton({ screenshot, onTakeShot,  onRemoveShot} : Prop
                 </View>
             ) 
             
-            : (<Text style={styles.removeIcon}> printar </Text>)
+            : (<Text style={styles.removeIcon}> print </Text>)
         }
         </>
         {/* 
