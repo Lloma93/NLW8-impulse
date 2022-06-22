@@ -1,7 +1,6 @@
-import React from "react";
-import { ArrowArcLeft, Camera } from "phosphor-react";
-import { FormEvent, useState } from "react";
-import { FeedbackType, feedbackTypes } from "..";
+import React, { FormEvent, useState } from "react";
+import { ArrowArcLeft } from "phosphor-react";
+import { FeedbackType, feedbackTypes } from "../";
 import { api } from "../../../service/api";
 import { CloseButton } from "../../CloseButton";
 import { Loading } from "../../Loading";
