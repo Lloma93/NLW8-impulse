@@ -318,3 +318,9 @@ deploy do BE
 url de conexão .env
 $npx tsc //cria a dist para o deploy 
 add a pasta dist no gitignore e jest
+
+incluir scripts no package json    
+"buid": "npx tsc", //realiza a conversão de TS para JS gerando pasta dist
+"start": "node dist/server.js" //roda o servidor a partir da dist
+
+https://railway.app/ 
