@@ -306,3 +306,8 @@ module.exports = {
    para evitar o erro de cors:
    $ npm i cors
    $ npm i @types/cors -D
+
+
+### 
+npm run dev 
+npx prisma studio
