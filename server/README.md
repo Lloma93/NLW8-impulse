@@ -311,3 +311,10 @@ module.exports = {
 ### 
 npm run dev 
 npx prisma studio
+
+----------
+deploy do BE
+#postgresql
+url de conexão .env
+$npx tsc //cria a dist para o deploy 
+add a pasta dist no gitignore e jest
