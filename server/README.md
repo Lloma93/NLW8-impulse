@@ -324,3 +324,9 @@ incluir scripts no package json
 "start": "node dist/server.js" //roda o servidor a partir da dist
 
 https://railway.app/ 
+![image](https://user-images.githubusercontent.com/35180706/175085806-c46c0b29-352a-4677-9a71-deec92cc6cc9.png)
+
+
+Criar BD postgree // pegar a variável e add ao projeto
+DATABASE_URL -> atrelar a conexão do banco de dados
+
